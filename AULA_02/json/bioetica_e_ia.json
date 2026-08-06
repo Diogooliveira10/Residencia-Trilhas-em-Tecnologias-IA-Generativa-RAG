@@ -1,0 +1,16 @@
+{
+    "titulo": "Entre o algoritmo e o Juramento de Hipócrates: bioética na era da inteligência artificial",
+    "autores": [
+        "Juracy Barbosa dos Santos",
+        "Guilhermina Rego",
+        "Rui Nunes"
+    ],
+    "ano": null,
+    "resumo": "O avanço da inteligência artificial tem transformado profundamente a prática médica. De sistemas de apoio à decisão clínica a algoritmos de triagem e diagnóstico, a inteligência artificial tem demonstrado potencial para diagnósticos precoces, terapias personalizadas, otimização de recursos, redução de erros e ampliação do acesso a cuidados especializados. Contudo, essa revolução tecnológica impõe desafios éticos significativos aos princípios clássicos da bioética, como beneficência, não maleficência, confidencialidade e respeito à autonomia do doente, consagrados desde o Juramento de Hipócrates. A incorporação da inteligência artificial na medicina suscita tensões entre eficiência automatizada e valores humanos. Este artigo revisa a literatura sobre os principais dilemas éticos da aplicação da inteligência artificial na prática médica e avalia em que medida os princípios hipocráticos podem ser preservados ou adaptados diante das transformações tecnológicas, a fim de contribuir para o debate sobre os rumos éticos da medicina contemporânea em um cenário de crescente automação.",
+    "palavras_chave": [
+        "Bioética",
+        "Inteligência artificial",
+        "Ética médica",
+        "Autonomia pessoal"
+    ]
+}
