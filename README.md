@@ -15,8 +15,7 @@ Este repositório reúne todo o material produzido ao longo da residência, incl
 - 📝 Resumos e anotações
 - 🚀 Projetos desenvolvidos
 - 🤖 Experimentos com Inteligência Artificial Generativa, LLMs e RAG
-
-O objetivo é documentar minha evolução durante o programa e servir como portfólio de aprendizado.
+  O objetivo é documentar minha evolução durante o programa e servir como portfólio de aprendizado.
 
 ---
 
@@ -41,6 +40,26 @@ O objetivo é documentar minha evolução durante o programa e servir como portf
 
 ---
 
+## 📁 Aula 02 — conversao-pdf-e-extracao-metadados
+
+### Conteúdos abordados
+
+- Conversão de arquivos PDF em Markdown utilizando a biblioteca Docling
+- Ajuste de pipeline options do Docling (desativação de OCR) para evitar erros de memória em PDFs com texto nativo
+- Extração estruturada de metadados (título, autores, ano, resumo e palavras-chave) dos arquivos Markdown gerados
+- Uso de Structured Outputs da API da OpenAI, com schema JSON estrito, para garantir a validade e o formato dos dados extraídos
+- Escrita de _system prompts_ com regras explícitas para evitar alucinação do modelo (nunca inventar dados, preservar texto original, retornar `null` para campos ausentes)
+
+### Tecnologias
+
+- Python
+- Docling
+- OpenAI API (Structured Outputs)
+- OpenRouter
+- python-dotenv
+
+---
+
 ## 🚀 Objetivos da Residência
 
 Ao longo do programa serão explorados temas como:
@@ -61,7 +80,6 @@ Ao longo do programa serão explorados temas como:
 ## 📌 Status
 
 🟢 Em andamento
-
 Novos conteúdos serão adicionados conforme o avanço da residência.
 
 ---
