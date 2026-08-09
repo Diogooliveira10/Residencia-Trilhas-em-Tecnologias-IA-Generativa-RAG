@@ -60,6 +60,29 @@ Este repositório reúne todo o material produzido ao longo da residência, incl
 
 ---
 
+## 📁 Aula 03 — embeddings-e-metricas-de-similaridade
+
+### Conteúdos abordados
+
+- Geração de embeddings reais via API da OpenRouter (modelo `text-embedding-3-small`)
+- Implementação, do zero, da **distância euclidiana** entre dois vetores de qualquer dimensão
+- Implementação, do zero, da **distância de cosseno** (1 − similaridade de cosseno) entre dois vetores
+- Validação das métricas com vetores de teste simples e com termos de domínio (animais, veículos e frutas)
+- Aplicação das métricas a embeddings reais dos mesmos termos, com redução de dimensionalidade via **PCA** e visualização em gráfico **3D**
+- Exercício desenvolvido originalmente no Google Colab e posteriormente migrado para o VS Code
+
+### Tecnologias
+
+- Python
+- OpenRouter API (embeddings)
+- NumPy
+- scikit-learn (PCA)
+- Matplotlib
+- Google Colab
+- python-dotenv
+
+---
+
 ## 🚀 Objetivos da Residência
 
 Ao longo do programa serão explorados temas como:
