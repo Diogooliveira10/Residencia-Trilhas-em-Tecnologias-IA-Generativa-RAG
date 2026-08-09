@@ -3,3 +3,7 @@ python-dotenv
 jupyter
 ipykernel
 docling
+requests
+numpy
+scikit-learn
+matplotlib
