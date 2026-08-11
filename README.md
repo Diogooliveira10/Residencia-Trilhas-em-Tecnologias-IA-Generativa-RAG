@@ -60,7 +60,7 @@ Este repositório reúne todo o material produzido ao longo da residência, incl
 
 ---
 
-## 📁 Aula 03 — embeddings-e-metricas-de-similaridade
+## 📁 Aula 03 — embeddings-e-busca-semantica
 
 ### Conteúdos abordados
 
@@ -69,6 +69,10 @@ Este repositório reúne todo o material produzido ao longo da residência, incl
 - Implementação, do zero, da **distância de cosseno** (1 − similaridade de cosseno) entre dois vetores
 - Validação das métricas com vetores de teste simples e com termos de domínio (animais, veículos e frutas)
 - Aplicação das métricas a embeddings reais dos mesmos termos, com redução de dimensionalidade via **PCA** e visualização em gráfico **3D**
+- **Desafio — Busca Semântica Manual**: implementação de um pipeline de recuperação do zero, comparando três estratégias de fragmentação (chunking) de documentos — linha, parágrafo e capítulo
+- Geração de embeddings em lote com rastreamento do consumo de tokens por requisição
+- Recuperação dos TOP 3 trechos mais similares a uma query via Similaridade de Cosseno, para cada estratégia de chunking
+- Análise comparativa entre as três granularidades: relevância, contexto e especificidade dos resultados recuperados
 - Exercício desenvolvido originalmente no Google Colab e posteriormente migrado para o VS Code
 
 ### Tecnologias
@@ -76,6 +80,7 @@ Este repositório reúne todo o material produzido ao longo da residência, incl
 - Python
 - OpenRouter API (embeddings)
 - NumPy
+- pandas
 - scikit-learn (PCA)
 - Matplotlib
 - Google Colab
