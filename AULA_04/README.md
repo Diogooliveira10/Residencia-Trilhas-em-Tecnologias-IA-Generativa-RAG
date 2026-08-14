@@ -1,31 +1,31 @@
-# AI Generative & RAG Residency Program | PUC-Rio
+# Programa de Residência em IA Generativa & RAG | PUC-Rio
 
-## AI - Aula 04
+## IA - Aula 04
 
-This repository is part of the AI Generative & RAG Residency Program at PUC-Rio and contains the `chunking.ipynb` notebook, implementing the **Chunking Strategy Evaluation with LangChain** challenge: a complete pipeline that converts real PDFs into Markdown, applies **10 different chunking strategies**, generates embeddings for each chunk, and exports the results as JSON, to compare how each strategy affects document representation quality.
+Este repositório faz parte do Programa de Residência em IA Generativa & RAG da PUC-Rio e contém o notebook `chunking.ipynb`, com o desafio **Avaliação de Estratégias de Chunking com LangChain**: um pipeline completo que converte PDFs reais em Markdown, aplica **10 estratégias diferentes de chunking**, gera embeddings para cada trecho e exporta os resultados em JSON, para comparar como cada estratégia afeta a qualidade da representação dos documentos.
 
-The notebook covers the full pipeline:
+O notebook cobre o pipeline completo:
 
 ```
-PDF → Markdown → Chunking (10 strategies) → Embeddings → JSON
+PDF → Markdown → Chunking (10 estratégias) → Embeddings → JSON
 ```
 
-1. PDF extraction into structured Markdown via **Docling** (the same tool used in Class 02), evaluating how tables, images, and headings survive the conversion;
-2. Implementation of the 10 chunking strategies using **LangChain** splitters: fixed size (200/500/1000/2000 characters), fixed size with overlap (light and heavy), by paragraph, by grouped sentences, recursive, and by Markdown structure;
-3. Embedding generation for each chunk via the OpenRouter API, with token consumption tracking per test;
-4. Export of each experiment to `chunks_embeddings.json`, plus a comparative `summary.json` across each document's 10 tests;
-5. Running the full pipeline on the 11 real PDFs in the reference dataset (8 AI research papers + 3 documents reused from Class 02).
+1. Extração dos PDFs para Markdown estruturado via **Docling** (mesma ferramenta da Aula 02), avaliando como tabelas, imagens e headings sobrevivem à conversão;
+2. Implementação das 10 estratégias de chunking com os splitters do **LangChain**: tamanho fixo (200/500/1000/2000 caracteres), tamanho fixo com overlap (leve e pesado), por parágrafo, por sentenças agrupadas, recursivo e por estrutura Markdown;
+3. Geração de embeddings para cada chunk via API da OpenRouter, com rastreamento de tokens consumidos por teste;
+4. Exportação de cada experimento em `chunks_embeddings.json`, e um `summary.json` comparativo entre os 10 testes de cada documento;
+5. Execução do pipeline completo nos 11 PDFs reais da base de referência (8 papers de IA + 3 documentos reaproveitados da Aula 02).
 
-The pipeline was built with **resilience** in mind: isolated failures (a chunk exceeding the model's token limit, a runtime disconnect) don't discard work already done — results are saved incrementally, interrupted runs resume where they left off, and the reason for any failure is recorded directly in `summary.json`.
+O pipeline foi construído com foco em **resiliência**: falhas pontuais (um chunk que excede o limite de tokens do modelo, uma desconexão de runtime) não descartam o trabalho já feito — resultados são salvos incrementalmente, execuções interrompidas retomam de onde pararam, e o motivo do problema fica registrado no próprio `summary.json`.
 
-> **On the development environment:** unlike Class 03, this notebook is developed and run entirely on **Google Colab**. PDF extraction via Docling downloads models from Hugging Face on first run and is sensitive to available hardware (CPU vs. GPU), and the full pipeline processes a large volume of data over several hours — so Google Drive is mounted to persist results across sessions instead of relying on the VM's ephemeral disk. Running locally is possible, but it's not the tested path.
+> **Sobre o ambiente de desenvolvimento:** diferente da Aula 03, este notebook é desenvolvido e executado inteiramente no **Google Colab**. A extração de PDF via Docling baixa modelos do Hugging Face na primeira execução e é sensível ao hardware disponível (CPU vs. GPU), e o pipeline completo processa um volume grande de dados ao longo de várias horas — por isso o Google Drive é montado para persistir os resultados entre sessões, em vez de depender do disco efêmero da VM. Rodar localmente é possível, mas não é o caminho testado.
 
-## 📂 Project Structure
+## 📂 Estrutura do Projeto
 
 ```
 AULA_04/
-├── chunking.ipynb   # Main notebook: extraction, chunking, embeddings, export
-├── pdfs/                     # 11 source PDFs (input)
+├── chunking.ipynb   # Notebook principal: extração, chunking, embeddings, export
+├── pdfs/                     # 11 PDFs de origem (entrada)
 │   ├── attention_is_all_you_need.pdf
 │   ├── bert_pretraining.pdf
 │   ├── bioetica_e_ia.pdf
@@ -38,55 +38,55 @@ AULA_04/
 │   ├── retrieval_augmented_generation.pdf
 │   ├── scaling_laws_llm.pdf
 │   └── twitter_algoritmo.pdf
-└── requirements.txt          # Dependencies (optional, for local execution)
+└── requirements.txt          # Dependências (uso opcional, para execução local)
 ```
 
-> Results (`results/<document>/markdown/`, `results/<document>/test_XX/chunks_embeddings.json`, `results/summary.json`) are generated by the notebook itself and persisted to the user's Google Drive — they are not part of this repository.
+> Os resultados (`results/<documento>/markdown/`, `results/<documento>/test_XX/chunks_embeddings.json`, `results/summary.json`) são gerados pelo próprio notebook e persistidos no Google Drive do usuário — não fazem parte deste repositório.
 
-## 🚀 Setup and Execution Steps
+## 🚀 Passo a Passo para Configuração e Execução
 
-1. Upload `chunking.ipynb` to Google Colab (or open it directly from GitHub);
-2. In the sidebar, click the key icon (🔑 _Secrets_) and add a secret named `OPENROUTER_API_KEY` with your OpenRouter key;
-3. Grant the notebook access to that secret;
-4. Run the cell that mounts Google Drive (section "Persist Results to Google Drive") and authorize access when prompted;
-5. Run the cells in order (`Runtime > Run all` or cell by cell). When you reach the "Upload and Convert All PDFs" section, select all 11 files from the `pdfs/` folder;
-6. If execution is interrupted (disconnect, insufficient credits, etc.), simply re-run the Step 5 cell — already-processed documents are automatically detected and skipped, without reprocessing (or re-billing) them.
+1. Faça upload de `chunking.ipynb` no Google Colab (ou abra diretamente pelo GitHub);
+2. No menu lateral, clique no ícone de chave (🔑 _Secrets_) e adicione um secret chamado `OPENROUTER_API_KEY` com sua chave da OpenRouter;
+3. Habilite o acesso do notebook a esse secret;
+4. Execute a célula que monta o Google Drive (seção "Persist Results to Google Drive") e autorize o acesso quando solicitado;
+5. Execute as células em ordem (`Runtime > Run all` ou célula por célula). Quando chegar na seção "Upload and Convert All PDFs", selecione os 11 arquivos da pasta `pdfs/`;
+6. Se a execução for interrompida (desconexão, créditos insuficientes, etc.), basta rodar a célula do Passo 5 novamente — documentos já processados são identificados automaticamente e pulados, sem reprocessar (nem regastar tokens).
 
-### About the API Key and Credits
+### Sobre a chave de API e créditos
 
-The notebook uses the `text-embedding-3-small` model via OpenRouter. Free-tier accounts have a token limit per period — running all 11 documents × 10 strategies can exceed it. If that happens, the notebook stops processing with a clear message pointing to adding credits at [openrouter.ai/settings/credits](https://openrouter.ai/settings/credits) or switching `EMBEDDING_MODEL` to a free alternative, such as the [Hugging Face Inference API](https://huggingface.co/blog/getting-started-with-embeddings).
+O notebook usa o modelo `text-embedding-3-small` via OpenRouter. Contas gratuitas têm um limite de tokens por período — rodar os 11 documentos × 10 estratégias pode exceder esse limite. Se isso acontecer, o notebook para o processamento com uma mensagem clara indicando para adicionar créditos em [openrouter.ai/settings/credits](https://openrouter.ai/settings/credits) ou trocar `EMBEDDING_MODEL` por uma alternativa gratuita, como o [Hugging Face Inference API](https://huggingface.co/blog/getting-started-with-embeddings).
 
-## 📝 Notebook Contents
+## 📝 Conteúdo do Notebook
 
-### Evaluated Chunking Strategies
+### Estratégias de Chunking Avaliadas
 
-| Test | Strategy        | Configuration               | Isolated Variable  |
-| ---- | --------------- | --------------------------- | ------------------ |
-| 1    | Fixed           | 200 characters, no overlap  | Extreme low size   |
-| 2    | Fixed           | 500 characters, no overlap  | Size               |
-| 3    | Fixed           | 1000 characters, no overlap | Size               |
-| 4    | Fixed           | 2000 characters, no overlap | Extreme high size  |
-| 5    | Fixed + overlap | 500 characters, overlap 50  | Light overlap      |
-| 6    | Fixed + overlap | 500 characters, overlap 200 | Heavy overlap      |
-| 7    | By paragraph    | Split by paragraphs         | Natural structure  |
-| 8    | By sentence     | Sentences grouped by 3      | Natural structure  |
-| 9    | Recursive       | Hierarchical separators     | Composite strategy |
-| 10   | Markdown        | Split by headings/sections  | Semantic structure |
+| Teste | Estratégia     | Configuração                  | Variável isolada      |
+| ----- | -------------- | ----------------------------- | --------------------- |
+| 1     | Fixo           | 200 caracteres, sem overlap   | Tamanho extremo baixo |
+| 2     | Fixo           | 500 caracteres, sem overlap   | Tamanho               |
+| 3     | Fixo           | 1000 caracteres, sem overlap  | Tamanho               |
+| 4     | Fixo           | 2000 caracteres, sem overlap  | Tamanho extremo alto  |
+| 5     | Fixo + overlap | 500 caracteres, overlap 50    | Overlap leve          |
+| 6     | Fixo + overlap | 500 caracteres, overlap 200   | Overlap pesado        |
+| 7     | Por parágrafo  | Separação por parágrafos      | Estrutura natural     |
+| 8     | Por sentença   | Sentenças agrupadas em 3      | Estrutura natural     |
+| 9     | Recursivo      | Separadores hierárquicos      | Estratégia composta   |
+| 10    | Markdown       | Separação por headings/seções | Estrutura semântica   |
 
 ### Pipeline
 
-| Section                          | Description                                                                                                                                                             |
-| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Configuration and data contracts | Defines `TestConfig`, `ChunkMetadata`, `ChunkRecord`, and the output paths (`results/<document>/...`).                                                                  |
-| PDF → Markdown (Docling)         | Converts the 11 PDFs with OCR disabled (native text), with a structural check for tables and images preserved through the conversion.                                   |
-| 10 chunking strategies           | Implements each strategy using LangChain's splitters (`RecursiveCharacterTextSplitter`, `CharacterTextSplitter`, `MarkdownHeaderTextSplitter`, etc.).                   |
-| Embedding generation             | Batched embeddings with token tracking, a per-item fallback when a batch fails (e.g. an oversized chunk), and an immediate stop on insufficient credits.                |
-| Full run                         | Runs the 10 strategies across all 11 real documents, saving `chunks_embeddings.json` per test and a comparative `summary.json` — with automatic resume on interruption. |
+| Seção                             | Descrição                                                                                                                                                                     |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Configuração e contratos de dados | Definição de `TestConfig`, `ChunkMetadata`, `ChunkRecord` e dos caminhos de saída (`results/<documento>/...`).                                                                |
+| PDF → Markdown (Docling)          | Conversão dos 11 PDFs com OCR desativado (texto nativo), com checagem estrutural de tabelas e imagens preservadas na conversão.                                               |
+| 10 estratégias de chunking        | Implementação de cada estratégia usando os splitters do LangChain (`RecursiveCharacterTextSplitter`, `CharacterTextSplitter`, `MarkdownHeaderTextSplitter`, etc.).            |
+| Geração de embeddings             | Embeddings em lote com rastreamento de tokens, fallback item a item quando um lote falha (ex: chunk grande demais), e parada imediata em caso de créditos insuficientes.      |
+| Execução completa                 | Roda as 10 estratégias nos 11 documentos reais, salvando `chunks_embeddings.json` por teste e um `summary.json` comparativo — com retomada automática em caso de interrupção. |
 
 ## 📌 Status
 
-🟡 In progress — the pipeline is implemented and validated, but the full run across all 11 documents is still ongoing (interrupted by an API credit limit). Still remaining:
+🟡 Em andamento — o pipeline está implementado e validado, mas a execução completa nos 11 documentos ainda está em curso (interrompida por limite de créditos da API). Ainda faltam:
 
-- Complete the full run (all 11 documents × 10 strategies);
-- Comparative analysis answering the challenge's 15 mandatory questions (which strategy produced the most/fewest chunks, how tables and images were handled, which strategy is most suitable for RAG, etc.);
-- Final report consolidating configurations, statistics, and conclusions.
+- Concluir a execução completa (todos os 11 documentos × 10 estratégias);
+- Análise comparativa respondendo as 15 perguntas obrigatórias do desafio (qual estratégia gerou mais/menos chunks, tratamento de tabelas e imagens, estratégia mais adequada para RAG, etc.);
+- Relatório final consolidando configurações, estatísticas e conclusões.
