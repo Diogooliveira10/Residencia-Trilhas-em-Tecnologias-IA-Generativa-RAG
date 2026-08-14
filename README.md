@@ -88,6 +88,29 @@ Este repositório reúne todo o material produzido ao longo da residência, incl
 
 ---
 
+## 📁 Aula 04 — avaliacao-estrategias-chunking-langchain
+
+### Conteúdos abordados
+
+- Implementação de um pipeline completo PDF → Markdown → Chunking → Embeddings → JSON
+- Extração de PDFs reais para Markdown estruturado via Docling, com verificação de como tabelas, imagens e headings sobrevivem à conversão
+- Implementação de **10 estratégias de chunking** distintas com os splitters do LangChain: tamanho fixo (200/500/1000/2000 caracteres), tamanho fixo com overlap (leve e pesado), por parágrafo, por sentenças agrupadas, recursivo e por estrutura Markdown
+- Geração de embeddings para cada chunk via API da OpenRouter, com rastreamento de tokens consumidos por teste
+- Exportação de cada experimento em `chunks_embeddings.json`, e um `summary.json` comparativo entre os 10 testes de cada documento
+- Construção de um pipeline resiliente: fallback item a item quando um lote de embeddings falha (ex: chunk excedendo o limite de tokens do modelo), persistência incremental de resultados no Google Drive, retomada automática após interrupções e parada imediata em caso de créditos insuficientes da API
+- Execução do pipeline nos 11 PDFs reais da base de referência (8 papers de IA + 3 documentos reaproveitados da Aula 02)
+
+### Tecnologias
+
+- Python
+- LangChain (Text Splitters)
+- Docling
+- OpenRouter API (embeddings)
+- Google Colab
+- Google Drive
+
+---
+
 ## 🚀 Objetivos da Residência
 
 Ao longo do programa serão explorados temas como:
