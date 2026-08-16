@@ -9,3 +9,6 @@ pandas
 scikit-learn
 matplotlib
 langchain-text-splitters
+langchain-core
+sentence-transformers
+langchain-huggingface
