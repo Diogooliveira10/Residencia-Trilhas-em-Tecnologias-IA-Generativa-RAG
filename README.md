@@ -1,5 +1,10 @@
 # 🤖 Programa de Residência em IA Generativa & RAG | PUC-Rio
 
+![Python](https://img.shields.io/badge/Python-3.11%2B-blue?style=flat-square&logo=python)
+![LangChain](https://img.shields.io/badge/LangChain-Core%20%7C%20Splitters%20%7C%20HuggingFace-1C3C3C?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Em%20andamento-yellow?style=flat-square)
+![License](https://img.shields.io/badge/License-Educational-green?style=flat-square)
+
 > Repositório com os estudos, exercícios, projetos e anotações desenvolvidos durante o Programa de Residência em IA Generativa & RAG da PUC-Rio.
 
 ## 👨‍💻 Aluno
@@ -21,7 +26,9 @@ Este repositório reúne todo o material produzido ao longo da residência, incl
 
 # 📚 Conteúdo das Aulas
 
-## 📁 Aula 01 — configuracao-openai
+## 📁 Aula 01 — configuracao-openai · 🟢 Concluída
+
+[README →](./AULA_01/README.md)
 
 ### Conteúdos abordados
 
@@ -40,7 +47,9 @@ Este repositório reúne todo o material produzido ao longo da residência, incl
 
 ---
 
-## 📁 Aula 02 — conversao-pdf-e-extracao-metadados
+## 📁 Aula 02 — conversao-pdf-e-extracao-metadados · 🟢 Concluída
+
+[README →](./AULA_02/README.md)
 
 ### Conteúdos abordados
 
@@ -60,7 +69,9 @@ Este repositório reúne todo o material produzido ao longo da residência, incl
 
 ---
 
-## 📁 Aula 03 — embeddings-e-busca-semantica
+## 📁 Aula 03 — embeddings-e-busca-semantica · 🟢 Concluída
+
+[README →](./AULA_03/README.md)
 
 ### Conteúdos abordados
 
@@ -88,7 +99,9 @@ Este repositório reúne todo o material produzido ao longo da residência, incl
 
 ---
 
-## 📁 Aula 04 — avaliacao-estrategias-chunking-langchain
+## 📁 Aula 04 — avaliacao-estrategias-chunking-langchain · 🟢 Concluída
+
+[README →](./AULA_04/README.md)
 
 ### Conteúdos abordados
 
@@ -98,7 +111,7 @@ Este repositório reúne todo o material produzido ao longo da residência, incl
 - Geração de embeddings para cada chunk via API da OpenRouter, com rastreamento de tokens consumidos por teste
 - Exportação de cada experimento em `chunks_embeddings.json`, e um `summary.json` comparativo entre os 10 testes de cada documento
 - Construção de um pipeline resiliente: fallback item a item quando um lote de embeddings falha (ex: chunk excedendo o limite de tokens do modelo), persistência incremental de resultados no Google Drive, retomada automática após interrupções e parada imediata em caso de créditos insuficientes da API
-- Execução do pipeline nos 11 PDFs reais da base de referência (8 papers de IA + 3 documentos reaproveitados da Aula 02)
+- Execução do pipeline iniciada nos 11 PDFs reais da base de referência (8 papers de IA + 3 documentos reaproveitados da Aula 02) — em andamento, interrompida por limite de créditos da API após 6 documentos processados com sucesso
 
 ### Tecnologias
 
@@ -111,7 +124,9 @@ Este repositório reúne todo o material produzido ao longo da residência, incl
 
 ---
 
-## 📁 Aula 05 — documents-metadados-busca-vetorial
+## 📁 Aula 05 — documents-metadados-busca-vetorial · 🟢 Concluída
+
+[README →](./AULA_05/README.md)
 
 ### Conteúdos abordados
 
