@@ -111,6 +111,25 @@ Este repositório reúne todo o material produzido ao longo da residência, incl
 
 ---
 
+## 📁 Aula 05 — documents-metadados-busca-vetorial
+
+### Conteúdos abordados
+
+- Migração da estrutura manual de chunk construída na Aula 04 para o formato padrão `Document` do LangChain (`page_content` + `metadata`, sem campo de embedding — o vetor é responsabilidade da vector store, não do documento)
+- **Exercício 1**: criação manual de uma lista de `Document`, cobrindo pelo menos dois temas do curso (embeddings e chunking), com investigação de dois comportamentos: quais tipos de dado `metadata` aceita (incluindo listas e dicionários aninhados) e o que acontece ao criar um `Document` sem passar `metadata`
+- **Exercício 2**: projeto de um schema de metadados para os chunks da Aula 04, com os 7 campos mínimos exigidos mais 3 campos próprios (`n_tokens`, `overlap_percentual`, `hash_conteudo`), cada um justificado a partir de uma necessidade real do pipeline (orçamento de contexto do LLM, redundância entre chunks vizinhos, deduplicação entre estratégias)
+- Preparação para as próximas etapas do desafio (indexação numa vector store e busca semântica com filtros), usando modelo de embedding local via HuggingFace
+
+### Tecnologias
+
+- Python
+- LangChain (Core)
+- Sentence Transformers
+- LangChain HuggingFace
+- Google Colab
+
+---
+
 ## 🚀 Objetivos da Residência
 
 Ao longo do programa serão explorados temas como:
