@@ -145,6 +145,14 @@ Este repositório reúne todo o material produzido ao longo da residência, incl
 
 ---
 
+## 📁 Aula 06 — projeto-e-arquitetura-de-uma-aplicacao-rag · 🟡 Em andamento
+
+Avaliar a capacidade de compreender **quando, por que e como** utilizar RAG em uma aplicação real.
+
+Escolher **2 cenários diferentes** nos quais uma arquitetura RAG poderia ser utilizada e projetar, para cada um, uma solução completa, desde a entrada dos documentos até a geração da resposta pelo modelo de linguagem.
+
+---
+
 ## 🚀 Objetivos da Residência
 
 Ao longo do programa serão explorados temas como:
@@ -164,7 +172,7 @@ Ao longo do programa serão explorados temas como:
 
 ## 📌 Status
 
-🟢 Em andamento
+🟡 Em andamento
 Novos conteúdos serão adicionados conforme o avanço da residência.
 
 ---
